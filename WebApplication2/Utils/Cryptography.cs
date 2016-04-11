@@ -22,7 +22,7 @@ namespace WebApplication2.Utils
         /// <returns>Results of process in the form of a byte array</returns>
         private static byte[] CryptBytes(byte[] plain, string password, int iterations, CryptProc cryptproc)
         {
-            //Create our key from the password provided
+            //Create our key from the Password provided
             PasswordDeriveBytes pdb = new PasswordDeriveBytes(password, SALT, "SHA512", iterations);
 
             //We'll be using 3DES

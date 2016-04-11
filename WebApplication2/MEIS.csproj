@@ -135,15 +135,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminLteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\dbMEIS.cs" />
     <Compile Include="Models\ViewModel.cs" />
+    <Compile Include="Patterns\Adapter\IAdapter.cs" />
     <Compile Include="Patterns\FactoryMethod.cs" />
     <Compile Include="Patterns\SingletonMethod.cs" />
     <Compile Include="Patterns\SingletonObject.cs" />
+    <Compile Include="Patterns\Adapter\UserAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Cryptography.cs" />
   </ItemGroup>
@@ -209,10 +212,20 @@
     <Content Include="Content\AdminLTE\skins\skin-yellow.min.css" />
     <Content Include="Content\AdminLTE\skins\_all-skins.css" />
     <Content Include="Content\AdminLTE\skins\_all-skins.min.css" />
+    <Content Include="Content\AdminLTE\style.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\form-elements.css" />
+    <Content Include="Content\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Content\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Content\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Content\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Content\ico\favicon.png" />
+    <Content Include="Content\ico\pro.jpg" />
+    <Content Include="Content\style.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="favicon.ico" />
@@ -231,6 +244,12 @@
     <Content Include="Scripts\AdminLTE\app.js" />
     <Content Include="Scripts\AdminLTE\app.min.js" />
     <Content Include="Scripts\AdminLTE\demo.js" />
+    <Content Include="Scripts\AdminLTE\Login\jquery-1.11.1.js" />
+    <Content Include="Scripts\AdminLTE\Login\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\AdminLTE\Login\jquery.backstretch.js" />
+    <Content Include="Scripts\AdminLTE\Login\jquery.backstretch.min.js" />
+    <Content Include="Scripts\AdminLTE\Login\placeholder.js" />
+    <Content Include="Scripts\AdminLTE\Login\scripts.js" />
     <Content Include="Scripts\AdminLTE\pages\dashboard.js" />
     <Content Include="Scripts\AdminLTE\pages\dashboard2.js" />
     <Content Include="Scripts\AdminLTE\plugins\bootstrap-slider\bootstrap-slider.js" />
@@ -777,6 +796,12 @@
     <Content Include="Views\Shared\_AdminLteBreadcrumb.cshtml" />
     <Content Include="Views\AdminLte\Index.cshtml" />
     <Content Include="Views\AdminLte\Colors.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
