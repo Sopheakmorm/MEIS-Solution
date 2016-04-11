@@ -19,9 +19,9 @@ namespace AdminLteMvc.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            var db = SingletonObject.Context();
-            var user = db.TbUser.FirstOrDefault(x => x.TableKey == 201604110001);
-            var list = db.VPermissionDetails(user);
+            //var db = SingletonObject.Context();
+            //var user = db.TbUser.FirstOrDefault(x => x.TableKey == 201604110001);
+            //var list = db.VPermissionDetails(user);
             return View();
         }
 
