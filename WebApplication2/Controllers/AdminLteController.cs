@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MEIS.Patterns;
+using MEIS.Models;
 
 namespace AdminLteMvc.Controllers
 {
@@ -19,9 +21,25 @@ namespace AdminLteMvc.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            //var db = SingletonObject.Context();
-            //var user = db.TbUser.FirstOrDefault(x => x.TableKey == 201604110001);
-            //var list = db.VPermissionDetails(user);
+            var loginObject = (User)Session[SessionIndex.UserLogin.ToString()];
+            if (loginObject == null)
+            {
+                var cookie = Request.Cookies["User"];
+                if (!string.IsNullOrEmpty(cookie.Value))
+                {
+                    var userid = FormsAuthentication.Decrypt(cookie.Value);
+                    if (!string.IsNullOrEmpty(userid.UserData))
+                    {
+                        var id = decimal.Parse(userid.UserData);
+                        loginObject = SingletonObject.Context().TbUser.Find(id);
+                    }
+                }
+            }
+            if (loginObject == null)
+            {
+                Session[SessionIndex.UserLogin.ToString()] = loginObject;
+                return RedirectToAction("Login", "Users");
+            }
             return View();
         }
 

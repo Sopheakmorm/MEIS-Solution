@@ -58,7 +58,7 @@ namespace MEIS.Models
         public decimal TableKey { get; set; }
 
         public string UserName { get; set; }
-        public byte[] Password { get; set; }
+        public string Password { get; set; }
 
         public DateTime? CreatedDate { get; set; }
         public decimal? CreatedBy { get; set; }
@@ -68,6 +68,7 @@ namespace MEIS.Models
         public decimal? StaffId { get; set; }
         public bool? isDeleted { get; set; }
         public virtual ICollection<Permission> Permissions { get; set; } 
+        public bool KeepMeLogIn { get; set; }
     }
     public class ParameterType : ITable
     {

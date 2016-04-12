@@ -1,5 +1,6 @@
 using MEIS.Models;
 using MEIS.Patterns;
+using WebApplication2.Utils;
 
 namespace WebApplication2.Migrations
 {
@@ -13,6 +14,7 @@ namespace WebApplication2.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(dbMEIS context)
@@ -37,7 +39,8 @@ namespace WebApplication2.Migrations
                     Notes = "Testing User",
                     TableKey = 201604110001,
                     UserName = "Admin",
-                    Password = "123".GetUserPassword()
+                    Password = Cryptography.Encrypt("123"),
+                    KeepMeLogIn = true
                 });
 
             context.TbParameterTypes.AddOrUpdate(t => t.TableKey,

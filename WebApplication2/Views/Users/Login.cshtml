@@ -9,6 +9,7 @@
         ViewBag.Title = "User Authentication";
         Layout = null;
     }
+    @Scripts.Render("~/bundles/jquery")
     <title>@ViewBag.Title</title>
     <!-- CSS -->
     @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -87,9 +88,16 @@
                                     @Html.TextBoxFor(m => m.UserName, new {@class = "form-control", @placeholder = "User Name..."})
                                 </div>
                                 <div class="form-group">
-                                    @Html.Password("txtPwd",null, new { @class = "form-control", @placeholder = "Password..." })
+                                    @Html.PasswordFor(x => x.Password, new {@class = "form-control", @placeholder = "Password..."})
                                 </div>
-                                <button type="submit" class="btn">Sign in!</button>
+                                <div class="form-group">
+                                    <div class="col-sm-6">
+                                        @Html.CheckBoxFor(x => x.KeepMeLogIn, new { @text = "Keep me Login", @style= "margin - right: 10px;vertical-align: middle;display: inline-block;" })
+                                        <span style="vertical-align: middle;display: inline-block; font-size: 11px;">Keep me login</span>
+
+                                    </div>
+                                    <button  type="submit" class="btn pull-right">Sign in!</button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -126,7 +134,7 @@
         /*
             Fullscreen background
         */
-        $.backstretch("/Content/AdminLTE/img/backgrounds/bkg.jpg");
+        //$.backstretch("/Content/AdminLTE/img/backgrounds/bkg.jpg");
         /*
             Form validation
         */

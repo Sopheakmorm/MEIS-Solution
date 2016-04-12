@@ -11,7 +11,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @*TODO: Change App name*@
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Home</title>
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     @*Source Sans Pro from Google Fonts*@
@@ -32,7 +32,9 @@
     <link href="~/Content/AdminLTE/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     @*TODO: AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load.*@
-    <link href="~/Content/AdminLTE/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/AdminLTE/skins/_all-skins.min.css" rel="stylesheet" type="text/css"/>
+
+    
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body class="skin-blue">
@@ -66,6 +68,8 @@
     </div><!-- ./wrapper -->
     @* Bundles assume jquery 2.1.3 and Bootstrap 3 *@
     @Scripts.Render("~/bundles/jquery")
+    <link href="~/Content/Gridmvc.css" rel="stylesheet" />
+    <script src="~/Scripts/gridmvc.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
     <!-- FastClick -->
     <script src='~/Scripts/AdminLTE/plugins/fastclick/fastclick.min.js'></script>
