@@ -42,7 +42,26 @@ namespace WebApplication2.Migrations
                     Password = Cryptography.Encrypt("123"),
                     KeepMeLogIn = true
                 });
-
+            context.TbUser.AddOrUpdate(u => u.TableKey,
+                new User
+                {
+                    CreatedDate = DateTime.Now,
+                    Notes = "Testing User",
+                    TableKey = 201604110002,
+                    UserName = "Admin2",
+                    Password = Cryptography.Encrypt("123"),
+                    KeepMeLogIn = true
+                });
+            context.TbUser.AddOrUpdate(u => u.TableKey,
+                new User
+                {
+                    CreatedDate = DateTime.Now,
+                    Notes = "Testing User",
+                    TableKey = 201604110003,
+                    UserName = "Admin3",
+                    Password = Cryptography.Encrypt("123"),
+                    KeepMeLogIn = true
+                });
             context.TbParameterTypes.AddOrUpdate(t => t.TableKey,
                 new ParameterType
                 {

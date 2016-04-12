@@ -1,4 +1,6 @@
 ﻿@{
-    //Layout = "~/Views/Shared/_Layout.cshtml";
-    Layout = "~/Views/Shared/_AdminLteLayout.cshtml";
+    if (!Request.IsAjaxRequest())
+    {
+        Layout = "~/Views/Shared/_AdminLteLayout.cshtml";
+    }
 }

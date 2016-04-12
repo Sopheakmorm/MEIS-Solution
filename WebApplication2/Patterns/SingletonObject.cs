@@ -11,6 +11,7 @@ namespace MEIS.Patterns
     {
         private static dbMEIS context;
         private static AjaxOptions ajaxOptions;
+        private static AjaxOptions _ajaxOptions;
         public static dbMEIS Context()
         {
             return context ?? new dbMEIS();
@@ -26,5 +27,16 @@ namespace MEIS.Patterns
                 InsertionMode = InsertionMode.Replace,
             };
         }
+
+        public static AjaxOptions _AjaxOption()
+        {
+            return _ajaxOptions ?? new AjaxOptions
+            {
+                UpdateTargetId = "pMain",
+                InsertionMode = InsertionMode.Replace,
+                HttpMethod = "POST"
+            };
+        }
+
     }
 }

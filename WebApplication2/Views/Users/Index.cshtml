@@ -1,8 +1,26 @@
 ﻿@model IEnumerable<MEIS.Models.User>
 @using GridMvc.Sorting
 @using GridMvc.Html
-@Html.Grid(Model).Columns(columns =>
+@{
+    ViewBag.Title = "User Information";
+}
+@{
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("Dashboard", @Url.Action("Index","AdminLte"), "fa-dashboard"),
+        new Crumb("User",@Url.Action("Index","Users"),"fa fa-user-md")
+    });
+}
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+        <small>@ViewBag.TitleSmall</small>
+    </h1>
+    @Html.Partial("_AdminLteBreadcrumb")
+</section>
+<section class="content">
+    @Html.Grid(Model).Columns(columns =>
 {
     columns.Add(foo => foo.TableKey).Titled("Custom column title").SetWidth(110);
     columns.Add(foo => foo.UserName).Sortable(true);
-}).WithPaging(20).Filterable(true).Selectable(true)
+}).WithPaging(2).Filterable(true).Selectable(true).
+</section>
